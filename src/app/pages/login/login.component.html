@@ -3,7 +3,10 @@ title="Login into your account"
  primaryBtnText="Login Now"
   secondaryBtnText="Signup Now"
   (submit)="submit()"
-  (navigate)="navigate()">
+  (navigate)="navigate()"
+  [disablePrimaryBtn] = "!loginForm.valid"
+  >
+  
   <form [formGroup]="loginForm">
     <app-primary-input
     formArrayName="email"
