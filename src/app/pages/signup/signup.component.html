@@ -1,0 +1,107 @@
+<app-default-login-layout 
+    title="Signup in and start today!"
+    primaryBtnText="Proceed Now"
+    secondaryBtnText="Login Now"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="false">
+
+    <form [formGroup]="signupForm">
+        <app-primary-input
+            formControlName="nome"
+            inputName="nome"
+            type="text"
+            label="Nome"
+            placeholder="John Doe">
+            <img src="/svg/user-icon.svg">
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="email"
+            inputName="email"
+            type="email"
+            label="Email"
+            placeholder="johndoe@gmail.com">
+            <img src="/svg/email-icon.svg">
+        </app-primary-input>
+
+        <app-primary-input
+        formControlName="cpf"
+        inputName="cpf"
+        type="text"
+        label="CPF"
+        placeholder="111.111.111-11">
+        <img src="/svg/user-icon.svg">
+            
+        </app-primary-input>
+        <app-primary-input
+        formControlName="telefone"
+        inputName="telefone"
+        type="text"
+        label="Telefone"
+        placeholder="(61) 9 1111-1111">
+        <img src="/svg/user-icon.svg">
+            
+        </app-primary-input>
+        <app-primary-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Senha">
+            <img src="/svg/password-icon.svg">
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="passwordConfirm"
+            inputName="passwordConfirm"
+            type="password"
+            label="Confirmar senha">
+            <img src="/svg/password-icon.svg">
+        </app-primary-input>
+
+        <app-primary-input
+        formControlName="logradouro"
+        inputName="logradouro"
+        type="text"
+        label="Logradouro"
+        placeholder="Rua Exemplo, 123">
+        <img src="/svg/address-icon.svg">
+    </app-primary-input>
+
+    <app-primary-input
+        formControlName="numero"
+        inputName="numero"
+        type="text"
+        label="Número"
+        placeholder="123">
+        <img src="/svg/address-icon.svg">
+    </app-primary-input>
+
+    <app-primary-input
+        formControlName="bairro"
+        inputName="bairro"
+        type="text"
+        label="Bairro"
+        placeholder="Bairro Exemplo">
+        <img src="/svg/address-icon.svg">
+    </app-primary-input>
+
+    <app-primary-input
+        formControlName="cidade"
+        inputName="cidade"
+        type="text"
+        label="Cidade"
+        placeholder="Cidade Exemplo">
+        <img src="/svg/address-icon.svg">
+    </app-primary-input>
+
+    <app-primary-input
+        formControlName="estado"
+        inputName="estado"
+        type="text"
+        label="Estado"
+        placeholder="Estado Exemplo">
+        <img src="/svg/address-icon.svg">
+    </app-primary-input>
+    </form>
+</app-default-login-layout>

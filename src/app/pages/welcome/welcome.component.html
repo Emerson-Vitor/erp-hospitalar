@@ -1,0 +1,34 @@
+
+<main>
+  <section class="form-section">
+    <img src="/svg/logo.svg" alt="">
+    <h2>Menu</h2>
+    <ng-content></ng-content>
+    <div class="btn-wrapper">
+
+    
+    <button 
+    class="btn-primary" 
+    (click)="home()"
+    >
+    Home</button>
+    <div class="divider">
+      <div></div>
+      <span>or</span>
+      <div></div>
+    </div>
+    <button class="btn-secondary" (click)="contato()">Entre em contato</button>
+    <div class="divider">
+      <div></div>
+      <span>or</span>
+      <div></div>
+    </div>
+    <button class="btn-secondary" (click)="update()">Dados Cadastrais</button>
+
+  </div>
+  </section>
+  <section class="main-section">
+    <h2>Bem-vindo {{ firstName }} {{ lastName }}! O que deseja fazer hoje?</h2>
+    <img src="/svg/main-ilustration.svg" alt="">
+  </section>
+</main>

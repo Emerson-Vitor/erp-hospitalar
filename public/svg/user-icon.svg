@@ -1,7 +1,12 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg fill="#ffffff" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 63.425 63.425" xml:space="preserve" stroke="#ffffff">
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier"> <g> <path d="M44.016,38.421c-1.26-0.592-2.551-1.197-3.442-1.77c4.727-3.597,7.668-9.9,7.668-16.787C48.242,8.911,40.827,0,31.713,0 S15.184,8.911,15.184,19.864c0,6.902,2.939,13.19,7.672,16.784c-0.889,0.57-2.184,1.178-3.45,1.771 c-6.202,2.91-15.574,7.309-15.574,22.006v3h55.761v-3C59.592,45.727,50.219,41.331,44.016,38.421z M10.012,57.425 c1.083-8.478,6.82-11.171,11.941-13.574c2.787-1.307,5.193-2.437,6.671-4.419l0.415-0.558l0.945-5.049l-2.006-1.017 c-4.065-2.061-6.796-7.263-6.796-12.945c0-7.645,4.724-13.864,10.529-13.864s10.529,6.22,10.529,13.864 c0,5.627-2.691,10.812-6.698,12.901l-1.971,1.028l1.018,5.426l0.524,0.61c1.5,1.746,3.749,2.801,6.354,4.022 c5.122,2.403,10.86,5.096,11.942,13.573H10.012V57.425z"/> </g> </g>
-</svg>
+
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg fill="#ffffff" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 63.425 63.425" xml:space="preserve" stroke="#ffffff">
+
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <g> <path d="M44.016,38.421c-1.26-0.592-2.551-1.197-3.442-1.77c4.727-3.597,7.668-9.9,7.668-16.787C48.242,8.911,40.827,0,31.713,0 S15.184,8.911,15.184,19.864c0,6.902,2.939,13.19,7.672,16.784c-0.889,0.57-2.184,1.178-3.45,1.771 c-6.202,2.91-15.574,7.309-15.574,22.006v3h55.761v-3C59.592,45.727,50.219,41.331,44.016,38.421z M10.012,57.425 c1.083-8.478,6.82-11.171,11.941-13.574c2.787-1.307,5.193-2.437,6.671-4.419l0.415-0.558l0.945-5.049l-2.006-1.017 c-4.065-2.061-6.796-7.263-6.796-12.945c0-7.645,4.724-13.864,10.529-13.864s10.529,6.22,10.529,13.864 c0,5.627-2.691,10.812-6.698,12.901l-1.971,1.028l1.018,5.426l0.524,0.61c1.5,1.746,3.749,2.801,6.354,4.022 c5.122,2.403,10.86,5.096,11.942,13.573H10.012V57.425z"/> </g> </g>
+
+</svg>
