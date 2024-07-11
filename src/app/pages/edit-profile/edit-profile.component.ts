@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, type OnInit } from '@angular/core';
-import { RouterModule,  Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterModule, Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -24,9 +24,11 @@ export class EditProfileComponent implements OnInit {
   }
 
   editUser(user: any): void {
-    this.router.navigate(['edit-user', user.id], {
-      state: { userData: user }
-    });
+    // Armazene os dados do usuário no sessionStorage
+    console.log(user);
+    sessionStorage.setItem('userData', JSON.stringify(user));
+    
+    // Navegue para o componente de edição
+    this.router.navigate(['edit-user', user.id]);
   }
-  
 }

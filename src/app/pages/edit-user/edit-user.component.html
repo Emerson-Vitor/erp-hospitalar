@@ -1,7 +1,7 @@
 <app-default-login-layout 
     title="Signup in and start today!"
     primaryBtnText="Proceed Now"
-    secondaryBtnText="Login Now"
+    secondaryBtnText="Dashboard"
     (submit)="submit()"
     (navigate)="navigate()"
     [disablePrimaryBtn]="false">
@@ -43,21 +43,6 @@
             <img src="/svg/user-icon.svg">
         </app-primary-input>
 
-        <app-primary-input
-            formControlName="password"
-            inputName="password"
-            type="password"
-            label="Senha">
-            <img src="/svg/password-icon.svg">
-        </app-primary-input>
-
-        <app-primary-input
-            formControlName="passwordConfirm"
-            inputName="passwordConfirm"
-            type="password"
-            label="Confirmar senha">
-            <img src="/svg/password-icon.svg">
-        </app-primary-input>
 
         <app-primary-input
             formControlName="logradouro"
@@ -65,7 +50,7 @@
             type="text"
             label="Logradouro"
             placeholder="Rua Exemplo, 123">
-            <img src="/svg/address-icon.svg">
+            <img src="/svg/user-icon.svg">
         </app-primary-input>
 
         <app-primary-input
@@ -74,7 +59,7 @@
             type="text"
             label="Número"
             placeholder="123">
-            <img src="/svg/address-icon.svg">
+            <img src="/svg/user-icon.svg">
         </app-primary-input>
 
         <app-primary-input
@@ -83,7 +68,7 @@
             type="text"
             label="Bairro"
             placeholder="Bairro Exemplo">
-            <img src="/svg/address-icon.svg">
+            <img src="/svg/user-icon.svg">
         </app-primary-input>
 
         <app-primary-input
@@ -92,7 +77,7 @@
             type="text"
             label="Cidade"
             placeholder="Cidade Exemplo">
-            <img src="/svg/address-icon.svg">
+            <img src="/svg/user-icon.svg">
         </app-primary-input>
 
         <app-primary-input
@@ -101,7 +86,7 @@
             type="text"
             label="Estado"
             placeholder="Estado Exemplo">
-            <img src="/svg/address-icon.svg">
+            <img src="/svg/user-icon.svg">
         </app-primary-input>
     </form>
 </app-default-login-layout>

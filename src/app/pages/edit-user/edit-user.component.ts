@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, FormControl, ReactiveFormsModule } from '@angular/forms'; // Removed ReactiveFormsModule from imports
+import { FormBuilder, FormGroup, Validators, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { LoginService } from '../../services/login.service';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
@@ -33,7 +33,6 @@ interface SignupForm {
   ],
   templateUrl: './edit-user.component.html',
   styleUrl: './edit-user.component.scss'
-  
 })
 export class EditUserComponent implements OnInit {
   signupForm: FormGroup;
@@ -42,7 +41,7 @@ export class EditUserComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder,
-    private userService: UserService // Make sure UserService is correctly injected
+    private userService: UserService
   ) {
     this.signupForm = this.fb.group({
       cpf: new FormControl('', Validators.required),
@@ -62,24 +61,38 @@ export class EditUserComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const userId = params['id'];
-      const userData = this.router.getCurrentNavigation()?.extras.state?.['userData'];
+      console.log('User ID from params:', userId);
 
-      if (userData) {
-        this.signupForm.patchValue({
-          nome: userData.nome,
-          email: userData.email,
-          cpf: userData.cpf,
-          telefone: userData.telefone,
-          logradouro: userData.endereco.logradouro,
-          numero: userData.endereco.numero,
-          bairro: userData.endereco.bairro,
-          cidade: userData.endereco.cidade,
-          estado: userData.endereco.estado
-        });
+      const userDataString = sessionStorage.getItem('userData');
+      console.log('User data from sessionStorage:', userDataString);
+      if (userDataString) {
+        const userData = JSON.parse(userDataString);
+        console.log('Parsed user data:', userData);
+        if (userData && userData.id == userId) {
+          this.patchFormData(userData);
+        } else {
+          console.error('Dados do usuário não encontrados ou ID não corresponde.');
+        }
       } else {
         console.error('Dados do usuário não encontrados.');
       }
     });
+  }
+
+  private patchFormData(userData: any): void {
+    console.log('Patching form data:', userData);
+    this.signupForm.patchValue({
+      nome: userData.nome,
+      email: userData.email,
+      cpf: userData.cpf,
+      telefone: userData.telefone,
+      logradouro: userData.endereco.logradouro,
+      numero: userData.endereco.numero,
+      bairro: userData.endereco.bairro,
+      cidade: userData.endereco.cidade,
+      estado: userData.endereco.estado
+    });
+    console.log('Form after patching:', this.signupForm.value);
   }
 
   submit(): void {

@@ -1,4 +1,19 @@
 
-    <div *ngFor="let user of users">
-      <button (click)="editUser(user)">{{ user.nome }}</button>
-    </div>
+    
+    <main>
+      <section class="form-section">
+        <img src="/svg/logo.svg" alt="">
+        <h2>profiles</h2>
+       
+        <div *ngFor="let user of users">
+          <button (click)="editUser(user)">{{ user.nome }}</button>
+        </div>
+      </section>
+      <section class="main-section">
+        <h2>You Should, MoveIt!</h2>
+        <img src="/svg/main-ilustration.svg" alt="">
+      </section>
+    </main>
+
+
+    
