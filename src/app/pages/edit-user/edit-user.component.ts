@@ -5,6 +5,7 @@ import { UserService } from '../../services/user.service';
 import { LoginService } from '../../services/login.service';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
+import { ToastrService } from 'ngx-toastr';
 
 interface SignupForm {
   cpf: FormControl,
@@ -36,11 +37,14 @@ interface SignupForm {
 })
 export class EditUserComponent implements OnInit {
   signupForm: FormGroup;
+  
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder,
+    private loginService: LoginService,
+    private toastService: ToastrService,
     private userService: UserService
   ) {
     this.signupForm = this.fb.group({
@@ -57,18 +61,20 @@ export class EditUserComponent implements OnInit {
       estado: new FormControl('', Validators.required)
     });
   }
+  userId: string = ""
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      const userId = params['id'];
-      console.log('User ID from params:', userId);
+      this.userId = params['id'];
+
+      console.log('User ID from params:', this.userId);
 
       const userDataString = sessionStorage.getItem('userData');
       console.log('User data from sessionStorage:', userDataString);
       if (userDataString) {
         const userData = JSON.parse(userDataString);
         console.log('Parsed user data:', userData);
-        if (userData && userData.id == userId) {
+        if (userData && userData.id == this.userId) {
           this.patchFormData(userData);
         } else {
           console.error('Dados do usuário não encontrados ou ID não corresponde.');
@@ -95,13 +101,29 @@ export class EditUserComponent implements OnInit {
     console.log('Form after patching:', this.signupForm.value);
   }
 
-  submit(): void {
-    console.log(this.signupForm.value);
-    // Implement logic to update user using this.userService
-    // Example: this.userService.updateUser(userId, this.signupForm.value).subscribe(result => { ... });
+  submit() {
+    this.loginService.updateRegister(
+      this.userId,
+      this.signupForm.value.telefone,
+      this.signupForm.value.nome,
+      this.signupForm.value.email,
+      this.signupForm.value.cpf,
+      {
+        logradouro: this.signupForm.value.logradouro,
+        numero: this.signupForm.value.numero,
+        bairro: this.signupForm.value.bairro,
+        cidade: this.signupForm.value.cidade,
+        estado: this.signupForm.value.estado
+      }
+    ).subscribe({
+      next: () => { this.toastService.success("modificação feita com sucesso!")
+        this.router.navigate(["edit-profile"])
+      },
+      error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde")
+    });
   }
 
   navigate(): void {
-    // Implement navigation logic if needed
+    this.router.navigate(["user"])
   }
 }

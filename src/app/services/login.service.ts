@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginResponse } from '../types/login-response.type';
 import { tap } from 'rxjs';
@@ -22,6 +22,7 @@ export class LoginService {
     )
   }
   signup(
+    
     senha: string,
     telefone: string,
     Nome: string,
@@ -48,6 +49,35 @@ export class LoginService {
         sessionStorage.setItem("username", value.name);
       })
     );
+  }
+
+  updateRegister(
+    id: string,
+    telefone: string,
+    Nome: string,
+    email: string,
+    Cpf: string,
+    endereco: {
+      logradouro: string,
+      numero: string,
+      bairro: string,
+      cidade: string,
+      estado: string
+    },
+    senha = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
+  ) {
+    const token = sessionStorage.getItem('auth-token');
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`
+  });
+    return this.httpClient.put<LoginResponse>(this.apiUrl + "/api/User/register/"+id, {
+      Cpf,
+      Nome,
+      email,
+      senha,
+      telefone,
+      endereco
+    },{ headers }).pipe();
   }
   
 }
